@@ -9,14 +9,10 @@ A machine learning-powered tool that leverages computer vision and meta-ensemble
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Overview
 
-Instagram is a prime target for fake accounts that can spread misinformation or manipulate social interactions. This project aims to automatically classify Instagram accounts as "fake" or "real" by:
+Instagram is a prime target for fake accounts that can spread misinformation or manipulate social interactions. This project aims to classify Instagram accounts as "fake" or "real" by:
 - Scraping profile pictures and Instagram metadata.
 - Processing profile pictures using a pre-trained CNN model.
 - Analyzing Instagram features (number of posts, followers, following, and follower-following ratio) using a Random Forest classifier.
