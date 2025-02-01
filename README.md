@@ -21,6 +21,14 @@ Instagram is a prime target for fake accounts that can spread misinformation or 
 - Processing profile pictures using a pre-trained CNN model.
 - Analyzing Instagram features (number of posts, followers, following, and follower-following ratio) using a Random Forest classifier.
 - Combining both predictions with a meta-model (stacking) for a robust final prediction.
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="flex: 1; text-align: center; margin: 5px;">
+    <img src="main_pic_1.JPG" alt="Image 1" width="300">
+  </div>
+  <div style="flex: 1; text-align: center; margin: 5px;">
+    <img src="main_pic_2.JPG" alt="Image 2" width="300">
+  </div>
+</div>
 
 ## Features
 
