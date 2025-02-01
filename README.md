@@ -21,14 +21,12 @@ Instagram is a prime target for fake accounts that can spread misinformation or 
 - Processing profile pictures using a pre-trained CNN model.
 - Analyzing Instagram features (number of posts, followers, following, and follower-following ratio) using a Random Forest classifier.
 - Combining both predictions with a meta-model (stacking) for a robust final prediction.
-<div style="display: flex; flex-wrap: wrap;">
-  <div style="flex: 1; text-align: center; margin: 5px;">
-    <img src="main_pic_1.JPG" alt="Image 1" width="300">
-  </div>
-  <div style="flex: 1; text-align: center; margin: 5px;">
-    <img src="main_pic_2.JPG" alt="Image 2" width="300">
-  </div>
-</div>
+<table style="border-collapse: collapse; border: none;">
+  <tr>
+    <td style="border: none;"><img src="main_pic_1.JPG" alt="Image 1" width="300"></td>
+    <td style="border: none;"><img src="main_pic_2.JPG" alt="Image 2" width="300"></td>
+  </tr>
+</table>
 
 ## Features
 
@@ -67,3 +65,66 @@ Instagram is a prime target for fake accounts that can spread misinformation or 
 - **Data Handling:** NumPy
 - **Model Serialization:** joblib
 - **HTTP Requests:** requests
+## Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/fake-instagram-account-detector.git
+   cd fake-instagram-account-detector
+
+2. **Set Up a Virtual Environment:**
+
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # For Windows: venv\Scripts\activate
+```
+3.**Install Dependencies:**
+Make sure you have all required packages installed. You can install them using:
+  ```bash
+  pip install -r requirements.txt
+  ```
+4.**Model Files:**
+
+Ensure that the following model files are available in your project directory:
+
+- **profile_pic_classifier.h5 (TensorFlow CNN model)**
+- **random_forest_model.pkl (scikit-learn Random Forest model)**
+- **meta_model.pkl (scikit-learn meta-model for stacking)**
+- **scaler.pkl (scaling model for meta-model input)**
+
+5.**Static Files:**
+
+Create a directory structure for static files if not already present:
+   ```bash
+   mkdir -p static/profile_pics
+   ```
+##Usage
+1.**Run the FastAPI Server:**
+
+Start the server using Uvicorn:
+
+```bash
+uvicorn main:app --reload
+The server will run at http://127.0.0.1:8000.
+```
+2.**Access the API:**
+
+- **Index Page:**
+  Open http://127.0.0.1:8000/ in your browser to view the index page.
+
+- **Prediction Endpoint:**
+  Make a GET request to /predict/?username=<instagram_username> to get the prediction for an Instagram account.
+  Example:
+
+```bash
+http://127.0.0.1:8000/predict/?username=example_user
+```
+The endpoint returns a JSON object with the following keys:
+- **username**
+- **prediction ("fake" or "real")**
+- **profile_pic_url (path to the downloaded profile picture)**
+- **followers**
+- **following**
+- **num_posts**
+- **bio**
